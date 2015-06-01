@@ -10,7 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
 import javax.swing.JLabel;
-
 import java.awt.EventQueue;
 import java.awt.Color;
 import java.awt.Desktop;
@@ -23,12 +22,9 @@ import java.awt.event.WindowListener;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
-
 import java.io.IOException;
-
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.Calendar;
 
 /**
@@ -208,9 +204,9 @@ public class Principal {
 		mntmContarStock.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"La tienda esta vacia", "Error",JOptionPane.ERROR_MESSAGE);
+					mensajeError("La tienda esta Vacia");
 				else {
-					JOptionPane.showMessageDialog(jFrame, "Hay "
+					mensajeInfo("Hay "
 							+ Fichero.tienda.tamaño()
 							+ " productos en stock en la tienda:\n"
 							+ Fichero.tienda.getProductoDisco().size()
@@ -218,8 +214,7 @@ public class Principal {
 							+ Fichero.tienda.getProductoCamiseta().size()
 							+ " son Camisetas\n"
 							+ Fichero.tienda.getProductoAccesorio().size()
-							+ " son Accesorios\n", "Info",
-							JOptionPane.INFORMATION_MESSAGE);
+							+ " son Accesorios\n");
 				}
 			}
 		});
@@ -286,7 +281,7 @@ public class Principal {
 			public void actionPerformed(ActionEvent e) {
 				if (Fichero.tienda.tamaño() == 0
 						|| Fichero.tienda.getProductoDisco().size() == 0)
-					JOptionPane.showMessageDialog(jFrame,"No hay productos para esta búsqueda", "Fallido",JOptionPane.ERROR_MESSAGE);
+					mensajeError("No hay productos para esta búsqueda");
 				else {
 					MostrarDiscos mostrar = new MostrarDiscos();
 					mostrar.setVisible(true);
@@ -304,7 +299,7 @@ public class Principal {
 			public void actionPerformed(ActionEvent e) {
 				if (Fichero.tienda.tamaño() == 0
 						|| Fichero.tienda.getProductoCamiseta().size() == 0)
-					JOptionPane.showMessageDialog(jFrame,"No hay productos para esta búsqueda", "Fallido",JOptionPane.ERROR_MESSAGE);
+					mensajeError("No hay productos para esta búsqueda");
 				else {
 					MostrarCamisetas mostrar = new MostrarCamisetas();
 					mostrar.setVisible(true);
@@ -322,7 +317,7 @@ public class Principal {
 		mntmAccesorios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (Fichero.tienda.tamaño() == 0||Fichero.tienda.getProductoAccesorio().size() == 0)
-					JOptionPane.showMessageDialog(jFrame,"No hay productos para esta búsqueda", "Fallido",JOptionPane.ERROR_MESSAGE);
+					mensajeError("No hay productos para esta búsqueda");
 				else {
 					MostrarAccesorios mostrar = new MostrarAccesorios();
 					mostrar.setVisible(true);
@@ -354,7 +349,7 @@ public class Principal {
 		mntmTitulo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"La tienda esta vacia", "Error",JOptionPane.ERROR_MESSAGE);
+					mensajeError("La tienda esta vacia");
 				else {
 					BuscarDiscoPrecio buscar = new BuscarDiscoPrecio();
 					buscar.setVisible(true);
@@ -369,7 +364,7 @@ public class Principal {
 		mntmBanda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"La tienda esta vacia", "Error",JOptionPane.ERROR_MESSAGE);
+					mensajeError("La tienda esta vacia");
 				else {
 					BuscarDiscoBanda buscar = new BuscarDiscoBanda();
 					buscar.setVisible(true);
@@ -384,7 +379,7 @@ public class Principal {
 		mntmEstilo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"La tienda esta vacia", "Error",JOptionPane.ERROR_MESSAGE);
+					mensajeError("La tienda esta vacia");
 				else {
 					BuscarDiscoEstilo buscar = new BuscarDiscoEstilo();
 					buscar.setVisible(true);
@@ -399,7 +394,7 @@ public class Principal {
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"La tienda esta vacia", "Error",JOptionPane.ERROR_MESSAGE);
+					mensajeError("La tienda esta vacia");
 				else {
 					BuscarDiscoLocalizacion buscar = new BuscarDiscoLocalizacion();
 					buscar.setVisible(true);
@@ -421,7 +416,7 @@ public class Principal {
 		mntmLocalizacin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"La tienda esta vacia", "Error",JOptionPane.ERROR_MESSAGE);
+					mensajeError("La tienda esta vacia");
 				else {
 					BuscarCamisetaLocalizacion buscar = new BuscarCamisetaLocalizacion();
 					buscar.setVisible(true);
@@ -435,7 +430,7 @@ public class Principal {
 		mntmBanda_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"La tienda esta vacia", "Error",JOptionPane.ERROR_MESSAGE);
+					mensajeError("La tienda esta vacia");
 				else {
 					BuscarCamisetaBanda buscar = new BuscarCamisetaBanda();
 					buscar.setVisible(true);
@@ -451,7 +446,7 @@ public class Principal {
 		mntmSexoYTalla.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"La tienda esta vacia", "Error",JOptionPane.ERROR_MESSAGE);
+					mensajeError("La tienda esta vacia");
 				else {
 					BuscarCamisetaSexoTalla buscar = new BuscarCamisetaSexoTalla();
 					buscar.setVisible(true);
@@ -466,7 +461,7 @@ public class Principal {
 		mntmPrecio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"La tienda esta vacia", "Error",JOptionPane.ERROR_MESSAGE);
+					mensajeError("La tienda esta vacia");
 				else {
 					BuscarCamisetaPrecio buscar = new BuscarCamisetaPrecio();
 					buscar.setVisible(true);
@@ -487,7 +482,7 @@ public class Principal {
 		mntmLocalizacin_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"La tienda esta vacia", "Error",JOptionPane.ERROR_MESSAGE);
+					mensajeError("La tienda esta vacia");
 				else {
 					BuscarAccesorioLocalizacion buscar = new BuscarAccesorioLocalizacion();
 					buscar.setVisible(true);
@@ -501,7 +496,7 @@ public class Principal {
 		mntmBanda_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"La tienda esta vacia", "Error",JOptionPane.ERROR_MESSAGE);
+					mensajeError("La tienda esta vacia");
 				else {
 					BuscarAccesorioBanda buscar = new BuscarAccesorioBanda();
 					buscar.setVisible(true);
@@ -517,7 +512,7 @@ public class Principal {
 		mntmTipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"La tienda esta vacia", "Error",JOptionPane.ERROR_MESSAGE);
+					mensajeError("La tienda esta vacia");
 				else {
 					BuscarAccesorioTipo buscar = new BuscarAccesorioTipo();
 					buscar.setVisible(true);
@@ -532,7 +527,7 @@ public class Principal {
 		mntmPrecio_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"La tienda esta vacia", "Error",JOptionPane.ERROR_MESSAGE);
+					mensajeError("La tienda esta vacia");
 				else {
 					BuscarAccesorioPrecio buscar = new BuscarAccesorioPrecio();
 					buscar.setVisible(true);
@@ -652,11 +647,11 @@ public class Principal {
 	public String mensajeDia() {
 		switch (Principal.dia) {
 		case 2:
-			return "Hoy es Lunes<br/>Descuento del dia: 30% en Accesorios";
+			return "Hoy es Lunes<br/>Descuento del dia:<br/>30% en Accesorios";
 		case 4:
-			return "Hoy es Miercoles<br/>Descuento del dia: 20% en Camisetas";
+			return "Hoy es Miercoles<br/>Descuento del dia:<br/>20% en Camisetas";
 		case 6:
-			return "Hoy es Viernes<br/>Descuento del dia: 10% en Discos";
+			return "Hoy es Viernes<br/>Descuento del dia:<br/>10% en Discos";
 		default:
 			return "Hoy no hay descuento del dia";
 		}
@@ -669,5 +664,23 @@ public class Principal {
 	 */
 	static int getDia() {
 		return dia;
+	}
+	
+	/**
+	 * Mensaje de error
+	 * 
+	 * @param mensaje Mensaje a mostrar 
+	 */
+	private void mensajeError(String mensaje) {
+		JOptionPane.showMessageDialog(jFrame,mensaje, "Error",JOptionPane.ERROR_MESSAGE);	
+	}
+	
+	/**
+	 * Mensaje de informaci&oacute;n
+	 * 
+	 * @param mensaje Mensaje a mostrar
+	 */
+	private void mensajeInfo(String mensaje){
+		JOptionPane.showMessageDialog(jFrame, mensaje, "Info",JOptionPane.INFORMATION_MESSAGE);
 	}
 }

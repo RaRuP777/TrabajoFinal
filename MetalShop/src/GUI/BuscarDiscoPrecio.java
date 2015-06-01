@@ -85,7 +85,7 @@ public class BuscarDiscoPrecio extends Padre {
 	/**
 	 * Pasa al siguiente objeto del ArrayList
 	 */
-	protected void mostrarSiguiente() {
+	private void mostrarSiguiente() {
 		mostrarDisco((Disco) stockAux.get(++indice));
 		comprobarBotones();
 	}
@@ -93,23 +93,8 @@ public class BuscarDiscoPrecio extends Padre {
 	/**
 	 * Pasa al anterior objeto del ArrayList
 	 */
-	protected void mostrarAnterior() {
+	private void mostrarAnterior() {
 		mostrarDisco((Disco) stockAux.get(--indice));
 		comprobarBotones();
-	}
-	
-	/**
-	 * Comprueba y habilita/deshabilita los botones siguiente y anterior si hay o no algo que mostrar
-	 */
-	protected void comprobarBotones() {
-		if (stockAux.get(indice + 1) == null)
-			siguiente.setEnabled(false);
-		else
-			siguiente.setEnabled(true);
-
-		if (stockAux.get(indice - 1) == null)
-			anterior.setEnabled(false);
-		else
-			anterior.setEnabled(true);
 	}
 }

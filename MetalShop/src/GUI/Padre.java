@@ -19,7 +19,6 @@ import javax.swing.ButtonGroup;
 import Tienda.ClasesArryList.Accesorio;
 import Tienda.ClasesArryList.Camiseta;
 import Tienda.ClasesArryList.Disco;
-import Tienda.ClasesArryList.Producto;
 import Tienda.ClasesArryList.Stock;
 import Tienda.Enumeraciones.Estilo;
 import Tienda.Enumeraciones.Localizacion;
@@ -32,7 +31,6 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import java.util.ArrayList;
 
 /**
  * Ventana Padre
@@ -411,5 +409,23 @@ public class Padre extends JDialog {
 			return Sexo.MUJER;
 		else
 			return null;
+	}
+
+	/**
+	 * Mensaje de error
+	 * 
+	 * @param mensaje Mensaje a mostrar 
+	 */
+	protected void mensajeError(String mensaje) {
+		JOptionPane.showMessageDialog(jFrame,mensaje, "Error",JOptionPane.ERROR_MESSAGE);	
+	}
+	
+	/**
+	 * Mensaje de informaci&oacute;n
+	 * 
+	 * @param mensaje Mensaje a mostrar
+	 */
+	protected void mensajeInfo(String mensaje){
+		JOptionPane.showMessageDialog(jFrame, mensaje, "Info",JOptionPane.INFORMATION_MESSAGE);
 	}
 }

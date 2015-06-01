@@ -1,10 +1,8 @@
 package GUI;
 
 import javax.swing.JOptionPane;
-
 import Tienda.ClasesArryList.Accesorio;
 import Tienda.Enumeraciones.Localizacion;
-
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -27,6 +25,9 @@ public class BuscarAccesorioLocalizacion extends Padre {
 	 */
 	public BuscarAccesorioLocalizacion() {
 		super();
+		titulo.setEnabled(false);
+		titulo.setEditable(false);
+		banda.setEnabled(false);
 		anterior.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mostrarAnterior();
@@ -83,7 +84,7 @@ public class BuscarAccesorioLocalizacion extends Padre {
 	/**
 	 * Pasa al siguiente objeto de la b&uacute;squeda
 	 */
-	protected void mostrarSiguiente() {
+	private void mostrarSiguiente() {
 		mostrarAccesorio((Accesorio) stockAux.get(++indice));
 		comprobarBotones();
 	}
@@ -91,7 +92,7 @@ public class BuscarAccesorioLocalizacion extends Padre {
 	/**
 	 * Pasa al anterior objeto de la b&uacute;squeda
 	 */
-	protected void mostrarAnterior() {
+	private void mostrarAnterior() {
 		mostrarAccesorio((Accesorio) stockAux.get(--indice));
 		comprobarBotones();
 	}

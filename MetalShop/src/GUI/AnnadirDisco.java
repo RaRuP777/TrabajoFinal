@@ -1,6 +1,5 @@
 package GUI;
 
-import javax.swing.JOptionPane;
 import Tienda.Enumeraciones.Estilo;
 import Tienda.Enumeraciones.Localizacion;
 import Tienda.Excepciones.CantidadCancionesNoValidaException;
@@ -41,32 +40,32 @@ public class AnnadirDisco extends Padre {
 					Fichero.tienda.annadir(banda.getText().trim(), (Localizacion) comboBoxLocalizacion.getSelectedItem(), 
 							Float.valueOf(precio.getText().trim()).floatValue(), (Estilo) comboBoxEstilo.getSelectedItem(), 
 							titulo.getText().trim(), Integer.valueOf(duracion.getText().trim()), Integer.valueOf(canciones.getText().trim()));
-					JOptionPane.showMessageDialog(contentPanel,"Un disco ha sido añadido", "Info",JOptionPane.INFORMATION_MESSAGE);
+					mensajeInfo("Un disco ha sido añadido");
 				} catch (NumberFormatException e) {
-					JOptionPane.showMessageDialog(contentPanel, "No puedes dejar campos en blanco","Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError("No puedes dejar campos en blanco");
 				} catch (EstiloNoElegidoException e) {
 					comboBoxEstilo.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (PrecioNoValidoException e) {
 					precio.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (DuracionNoValidaException e) {
 					duracion.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (CantidadCancionesNoValidaException e) {
 					canciones.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (NombreBandaNoValidoException e) {
 					banda.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (LocalizacionNoElegidaException e) {
 					comboBoxLocalizacion.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (TituloNoValidoException e) {
 					titulo.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (ProductoYaExisteException e) {
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				}
 }
 		});

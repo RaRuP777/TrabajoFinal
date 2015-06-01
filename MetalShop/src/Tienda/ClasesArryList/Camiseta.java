@@ -108,7 +108,7 @@ public class Camiseta extends Producto implements Igualable, Descontable {
 		if (esValido(titulo, patronNombres))
 			this.titulo = titulo;
 		else
-			throw new TituloNoValidoException("El título del disco no es correcto");
+			throw new TituloNoValidoException("El título no es correcto");
 	}
 	
 	/**

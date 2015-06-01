@@ -3,7 +3,6 @@ package GUI;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JOptionPane;
 import Tienda.Enumeraciones.Estilo;
 import Tienda.Enumeraciones.Localizacion;
 import Tienda.Enumeraciones.Tipo;
@@ -39,23 +38,23 @@ public class AnnadirAccesorio extends Padre {
 					Fichero.tienda.annadir(banda.getText().trim(),(Localizacion) comboBoxLocalizacion.getSelectedItem(),
 								Float.valueOf(precio.getText().trim()).floatValue(), 
 								(Estilo) comboBoxEstilo.getSelectedItem(), (Tipo) comboBoxTipo.getSelectedItem());
-					JOptionPane.showMessageDialog(contentPanel,"Un accesorio ha sido añadido", "Info",JOptionPane.INFORMATION_MESSAGE);
+					mensajeInfo("Un accesorio ha sido añadido");
 				} catch (NumberFormatException e) {
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (ProductoYaExisteException e) {
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (EstiloNoElegidoException e) {
 					comboBoxEstilo.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (PrecioNoValidoException e) {
 					precio.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (NombreBandaNoValidoException e) {
 					banda.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (LocalizacionNoElegidaException e) {
 					comboBoxLocalizacion.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				}
 			}
 		});

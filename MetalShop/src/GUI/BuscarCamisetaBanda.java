@@ -92,7 +92,7 @@ public class BuscarCamisetaBanda extends Padre {
 	/**
 	 * Pasa al siguiente objeto de la b&uacute;squeda
 	 */
-	protected void mostrarSiguiente() {
+	private void mostrarSiguiente() {
 		mostrarCamiseta((Camiseta) stockAux.get(++indice));
 		comprobarBotones();
 	}
@@ -100,7 +100,7 @@ public class BuscarCamisetaBanda extends Padre {
 	/**
 	 * Pasa al anterior objeto de la b&uacute;squeda
 	 */
-	protected void mostrarAnterior() {
+	private void mostrarAnterior() {
 		mostrarCamiseta((Camiseta) stockAux.get(--indice));
 		comprobarBotones();
 	}

@@ -24,6 +24,9 @@ public class MostrarAccesorios extends Padre {
 	 */
 	public MostrarAccesorios() {
 		super();
+		banda.setEnabled(false);
+		comboBoxLocalizacion.setEnabled(false);
+		titulo.setEditable(false);
 		anterior.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mostrarAnterior();
@@ -69,7 +72,7 @@ public class MostrarAccesorios extends Padre {
 	/**
 	 * Pasa al siguiente objeto del ArrayList
 	 */
-	protected void mostrarSiguiente() {
+	private void mostrarSiguiente() {
 		mostrarAccesorio((Accesorio) stockAux.get(++indice));
 		comprobarBotones();
 	}
@@ -77,7 +80,7 @@ public class MostrarAccesorios extends Padre {
 	/**
 	 * Pasa al anterior objeto del ArrayList
 	 */
-	protected void mostrarAnterior() {
+	private void mostrarAnterior() {
 		mostrarAccesorio((Accesorio) stockAux.get(--indice));
 		comprobarBotones();
 	}

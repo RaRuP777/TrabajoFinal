@@ -1,9 +1,7 @@
 package GUI;
 
 import javax.swing.JOptionPane;
-
 import Tienda.ClasesArryList.Accesorio;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
@@ -26,6 +24,7 @@ public class BuscarAccesorioPrecio extends Padre {
 	 */
 	public BuscarAccesorioPrecio() {
 		super();
+		comboBoxTipo.setEnabled(false);
 		anterior.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mostrarAnterior();
@@ -37,12 +36,14 @@ public class BuscarAccesorioPrecio extends Padre {
 			}
 		});
 		setModal(true);
-		titulo.setEnabled(false);
-		titulo.setEditable(false);
+		titulo.setVisible(false);
+		lblTitulo.setVisible(false);
 		banda.setEnabled(false);
 		banda.setEditable(false);
-		duracion.setEditable(false);
-		canciones.setEditable(false);
+		duracion.setVisible(false);
+		lblDuracion.setVisible(false);
+		canciones.setVisible(false);
+		lblCanciones.setVisible(false);
 		okButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (Fichero.tienda.tamaño() == 0)
@@ -71,7 +72,6 @@ public class BuscarAccesorioPrecio extends Padre {
 		okButton.setText("Buscar");
 		comboBoxTalla.setVisible(false);
 		lblTalla.setVisible(false);
-		comboBoxTipo.setVisible(false);
 		radiobuttonHombre.setVisible(false);
 		radiobuttonMujer.setVisible(false);
 		anterior.setEnabled(false);
@@ -85,7 +85,7 @@ public class BuscarAccesorioPrecio extends Padre {
 	/**
 	 * Pasa al siguiente objeto de la b&uacute;squeda
 	 */
-	protected void mostrarSiguiente() {
+	private void mostrarSiguiente() {
 		mostrarAccesorio((Accesorio) stockAux.get(++indice));
 		comprobarBotones();
 	}
@@ -93,7 +93,7 @@ public class BuscarAccesorioPrecio extends Padre {
 	/**
 	 * Pasa al anterior objeto de la b&uacute;squeda
 	 */
-	protected void mostrarAnterior() {
+	private void mostrarAnterior() {
 		mostrarAccesorio((Accesorio) stockAux.get(--indice));
 		comprobarBotones();
 	}
