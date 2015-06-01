@@ -1,6 +1,5 @@
 package GUI;
 
-import javax.swing.JOptionPane;
 import Tienda.Enumeraciones.Estilo;
 import Tienda.Enumeraciones.Localizacion;
 import Tienda.Enumeraciones.Talla;
@@ -45,33 +44,33 @@ public class AnnadirCamiseta extends Padre {
 					Fichero.tienda.annadir(banda.getText().trim(),titulo.getText().trim(), (Localizacion) comboBoxLocalizacion.getSelectedItem(),
 							Float.valueOf(precio.getText().trim()).floatValue(),
 							(Estilo) comboBoxEstilo.getSelectedItem(), (Talla) comboBoxTalla.getSelectedItem(), getSexo());
-					JOptionPane.showMessageDialog(contentPanel,"Una camiseta ha sido añadida", "Info",JOptionPane.INFORMATION_MESSAGE);
+					mensajeInfo("Una camiseta ha sido añadida");
 				} catch (NumberFormatException e) {
-					JOptionPane.showMessageDialog(contentPanel, "No puedes dejar campos en blanco","Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError("No puedes dejar campos en blanco");
 				} catch (ProductoYaExisteException e) {
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (EstiloNoElegidoException e) {
 					comboBoxEstilo.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (PrecioNoValidoException e) {
 					precio.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (NombreBandaNoValidoException e) {
 					banda.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (TallaNoValidaException e) {
 					comboBoxTalla.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (SexoNoValidoException e) {
 					radiobuttonHombre.setForeground(java.awt.Color.RED);
 					radiobuttonMujer.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (LocalizacionNoElegidaException e) {
 					comboBoxLocalizacion.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				} catch (TituloNoValidoException e) {
 					titulo.setForeground(java.awt.Color.RED);
-					JOptionPane.showMessageDialog(contentPanel, e.getMessage(),"Fallido", JOptionPane.ERROR_MESSAGE);
+					mensajeError(e.getMessage());
 				}
 			}
 		});

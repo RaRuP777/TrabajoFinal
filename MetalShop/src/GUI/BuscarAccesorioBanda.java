@@ -1,9 +1,7 @@
 package GUI;
 
 import javax.swing.JOptionPane;
-
 import Tienda.ClasesArryList.Accesorio;
-
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -60,7 +58,6 @@ public class BuscarAccesorioBanda extends Padre {
 		});
 		setIconImage(Toolkit.getDefaultToolkit().getImage(BuscarAccesorioLocalizacion.class.getResource("/GUI/iconos/buscar2.png")));
 		setTitle("Buscar Accesorio por Banda");
-		banda.setEditable(false);
 		okButton.setText("Buscar");
 		fecha.setEnabled(false);
 		precio.setEnabled(false);
@@ -83,7 +80,7 @@ public class BuscarAccesorioBanda extends Padre {
 	/**
 	 * Pasa al siguiente objeto de la b&uacute;squeda
 	 */
-	protected void mostrarSiguiente() {
+	private void mostrarSiguiente() {
 		mostrarAccesorio((Accesorio) stockAux.get(++indice));
 		comprobarBotones();
 	}
@@ -91,7 +88,7 @@ public class BuscarAccesorioBanda extends Padre {
 	/**
 	 * Pasa al anterior objeto de la b&uacute;squeda
 	 */
-	protected void mostrarAnterior() {
+	private void mostrarAnterior() {
 		mostrarAccesorio((Accesorio) stockAux.get(--indice));
 		comprobarBotones();
 	}

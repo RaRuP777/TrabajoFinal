@@ -1,10 +1,8 @@
 package GUI;
 
 import javax.swing.JOptionPane;
-
 import Tienda.ClasesArryList.Accesorio;
 import Tienda.Enumeraciones.Tipo;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
@@ -27,6 +25,7 @@ public class BuscarAccesorioTipo extends Padre {
 	 */
 	public BuscarAccesorioTipo() {
 		super();
+		banda.setEnabled(false);
 		anterior.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				mostrarAnterior();
@@ -83,7 +82,7 @@ public class BuscarAccesorioTipo extends Padre {
 	/**
 	 * Pasa al siguiente objeto de la b&uacute;squeda
 	 */
-	protected void mostrarSiguiente() {
+	private void mostrarSiguiente() {
 		mostrarAccesorio((Accesorio) stockAux.get(++indice));
 		comprobarBotones();
 	}
@@ -91,7 +90,7 @@ public class BuscarAccesorioTipo extends Padre {
 	/**
 	 * Pasa al anterior objeto de la b&uacute;squeda
 	 */
-	protected void mostrarAnterior() {
+	private void mostrarAnterior() {
 		mostrarAccesorio((Accesorio) stockAux.get(--indice));
 		comprobarBotones();
 	}

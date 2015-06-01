@@ -68,7 +68,7 @@ public class MostrarCamisetas extends Padre {
 	/**
 	 * Pasa al siguiente objeto del ArrayList
 	 */
-	protected void mostrarSiguiente() {
+	private void mostrarSiguiente() {
 		mostrarCamiseta((Camiseta) stockAux.get(++indice));
 		comprobarBotones();
 	}
@@ -76,7 +76,7 @@ public class MostrarCamisetas extends Padre {
 	/**
 	 * Pasa al anterior objeto del ArrayList
 	 */
-	protected void mostrarAnterior() {
+	private void mostrarAnterior() {
 		mostrarCamiseta((Camiseta) stockAux.get(--indice));
 		comprobarBotones();
 	}
