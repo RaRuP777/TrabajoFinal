@@ -44,6 +44,7 @@ public class MostrarAccesorios extends Padre {
 		precio.setEditable(false);
 		id.setEditable(false);
 		stockAux.setTienda(Fichero.tienda.getProductoAccesorio());
+		encontrado.setText(Integer.toString(stockAux.tamaño()));
 		mostrarAccesorio((Accesorio) stockAux.get(indice));
 		comprobarBotones();
 		vender.setEnabled(true);

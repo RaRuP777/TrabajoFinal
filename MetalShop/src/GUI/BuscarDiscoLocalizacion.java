@@ -1,9 +1,12 @@
 package GUI;
 
 import java.awt.Toolkit;
+
 import javax.swing.JOptionPane;
+
 import Tienda.ClasesArryList.Disco;
 import Tienda.Enumeraciones.Localizacion;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -43,6 +46,7 @@ public class BuscarDiscoLocalizacion extends Padre {
 				else {
 					tiendaAux.setTienda(Fichero.tienda.getProductoDisco());
 					stockAux.setTienda(tiendaAux.getProductoLocalizacion((Localizacion) comboBoxLocalizacion.getSelectedItem()));
+					encontrado.setText(Integer.toString(stockAux.tamaño()));
 					if (stockAux.tamaño() == 0)
 						JOptionPane.showMessageDialog(jFrame,"No hay productos para esta búsqueda", "Fallido",JOptionPane.ERROR_MESSAGE);
 					else {	

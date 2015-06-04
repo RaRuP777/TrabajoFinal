@@ -1,8 +1,10 @@
 package GUI;
 
 import javax.swing.JOptionPane;
+
 import Tienda.ClasesArryList.Accesorio;
 import Tienda.Enumeraciones.Localizacion;
+
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -48,12 +50,12 @@ public class BuscarAccesorioLocalizacion extends Padre {
 				else {
 					tiendaAux.setTienda(Fichero.tienda.getProductoAccesorio());
 					stockAux.setTienda(tiendaAux.getProductoLocalizacion((Localizacion) comboBoxLocalizacion.getSelectedItem()));
+					encontrado.setText(Integer.toString(stockAux.tamaño()));
 					if (stockAux.tamaño() == 0)
 						JOptionPane.showMessageDialog(jFrame,"No hay productos para esta búsqueda", "Fallido",JOptionPane.ERROR_MESSAGE);
 					else {	
 						mostrarAccesorio((Accesorio) stockAux.get(indice));
 						comprobarBotones();
-						okButton.setEnabled(false);
 						vender.setEnabled(true);
 					}
 				}

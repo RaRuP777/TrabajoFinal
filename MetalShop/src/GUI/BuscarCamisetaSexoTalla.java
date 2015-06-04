@@ -46,12 +46,12 @@ public class BuscarCamisetaSexoTalla extends Padre {
 				else {
 					tiendaAux.setTienda(Fichero.tienda.getProductoCamiseta());
 					stockAux.setTienda(tiendaAux.getCamisetaSexoTalla(getSexo(),(Talla) comboBoxTalla.getSelectedItem()));
+					encontrado.setText(Integer.toString(stockAux.tamaño()));
 					if (stockAux.tamaño() == 0)
 						JOptionPane.showMessageDialog(jFrame,"No hay productos para esta búsqueda", "Fallido",JOptionPane.ERROR_MESSAGE);
 					else {	
 						mostrarCamiseta((Camiseta) stockAux.get(indice));
 						comprobarBotones();
-						okButton.setEnabled(false);
 						vender.setEnabled(true);
 					}
 				}
