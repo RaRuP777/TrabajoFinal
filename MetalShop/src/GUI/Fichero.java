@@ -29,7 +29,7 @@ public class Fichero {
 	/**
 	 * Fichero para almacenar el stock en disco
 	 */
-	private static File file = new File("Sin_titulo.obj");
+	private static File file = new File("Sin_titulo.prd");
 
 	/**
 	 * Ventaja para selecci&oacute;n de ficheros
@@ -44,7 +44,7 @@ public class Fichero {
 	/**
 	 * Filtro para controlar la salida y entrada de ficheros
 	 */
-	private final static Filtro filtro = new Filtro(".obj", "Objeto");
+	private final static Filtro filtro = new Filtro(".prd", "Objeto");
 
 	/**
 	 * Nombra al nombre con el que escribimos
@@ -53,7 +53,7 @@ public class Fichero {
 	 *            Nombre del fichero
 	 */
 	public static void setFile(String nombre) {
-		file = new File(nombre + ".obj");
+		file = new File(nombre + ".prd");
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class Fichero {
 	 * Crea un nuevo stock y fichero
 	 */
 	public static void nuevo() {
-		file = new File("Sin_titulo.obj");
+		file = new File("Sin_titulo.prd");
 		tienda = new Stock();
 	}
 
@@ -106,7 +106,7 @@ public class Fichero {
 	 * Guarda un fichero si ya tiene nombre elegido
 	 */
 	public static void guardar() {
-		if (getName().equals("Sin_titulo.obj"))
+		if (getName().equals("Sin_titulo.prd"))
 			guardarComo();
 		else {
 			try (ObjectOutputStream out = new ObjectOutputStream(

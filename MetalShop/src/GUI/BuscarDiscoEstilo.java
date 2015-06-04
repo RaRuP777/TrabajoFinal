@@ -45,6 +45,7 @@ public class BuscarDiscoEstilo extends Padre {
 				else {
 					tiendaAux.setTienda(Fichero.tienda.getProductoDisco());
 					stockAux.setTienda(tiendaAux.getProductoEstilo((Estilo) comboBoxEstilo.getSelectedItem()));
+					encontrado.setText(Integer.toString(stockAux.tamaño()));
 					if (stockAux.tamaño() == 0)
 						JOptionPane.showMessageDialog(jFrame,"No hay productos para esta búsqueda", "Fallido",JOptionPane.ERROR_MESSAGE);
 					else {	

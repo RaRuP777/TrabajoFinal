@@ -39,6 +39,7 @@ public class MostrarCamisetas extends Padre {
 		banda.setEnabled(false);
 		banda.setEditable(false);
 		stockAux.setTienda(Fichero.tienda.getProductoCamiseta());
+		encontrado.setText(Integer.toString(stockAux.tamaño()));
 		mostrarCamiseta((Camiseta) stockAux.get(indice));
 		comprobarBotones();
 		vender.setEnabled(true);

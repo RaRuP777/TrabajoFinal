@@ -1,7 +1,9 @@
 package GUI;
 
 import javax.swing.JOptionPane;
+
 import Tienda.ClasesArryList.Accesorio;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
@@ -51,12 +53,12 @@ public class BuscarAccesorioPrecio extends Padre {
 				else {
 					tiendaAux.setTienda(Fichero.tienda.getProductoAccesorio());
 					stockAux.setTienda(tiendaAux.getProductoPrecio(precio.getText()));
+					encontrado.setText(Integer.toString(stockAux.tamaño()));
 					if (stockAux.tamaño() == 0)
 						JOptionPane.showMessageDialog(jFrame,"No hay productos para esta búsqueda","Fallido", JOptionPane.ERROR_MESSAGE);
 					else {
 						mostrarAccesorio((Accesorio) stockAux.get(indice));
 						comprobarBotones();
-						okButton.setEnabled(false);
 						vender.setEnabled(true);
 					}
 				}

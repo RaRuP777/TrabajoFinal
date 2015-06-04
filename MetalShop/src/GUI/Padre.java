@@ -55,7 +55,8 @@ public class Padre extends JDialog {
 	protected JTextField fecha;
 	protected JTextField canciones;
 	protected JTextField duracion;
-
+	protected JTextField encontrado;
+	
 	protected JButton cancelButton = new JButton("Volver");
 	protected JButton okButton = new JButton("OK");
 	protected JButton siguiente = new JButton(">");
@@ -76,6 +77,7 @@ public class Padre extends JDialog {
 	protected JLabel lblDuracion = new JLabel("Duracion");
 	protected JLabel lblTalla = new JLabel("Talla");
 	protected JLabel lblCanciones = new JLabel("Canciones");
+	protected JLabel lblEncontrados = new JLabel("Encontrados");
 
 	protected JComboBox<Estilo> comboBoxEstilo = new JComboBox<Estilo>();
 	protected JComboBox<Tipo> comboBoxTipo = new JComboBox<Tipo>();
@@ -294,6 +296,14 @@ public class Padre extends JDialog {
 		{
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			
+			lblEncontrados.setEnabled(false);
+			buttonPane.add(lblEncontrados);
+			
+			encontrado = new JTextField();
+			encontrado.setEnabled(false);
+			buttonPane.add(encontrado);
+			encontrado.setColumns(10);
 			anterior.setEnabled(false);
 			buttonPane.add(anterior);
 			siguiente.setEnabled(false);

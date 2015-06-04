@@ -352,8 +352,7 @@ public class Stock implements Serializable {
 		if (index != -1) {
 			return tienda.get(index);
 		} else
-			throw new ProductoNoExisteException(
-					"Este producto no esta disponible en la tienda");
+			throw new ProductoNoExisteException("Este producto no esta disponible en la tienda");
 	}
 
 	/**

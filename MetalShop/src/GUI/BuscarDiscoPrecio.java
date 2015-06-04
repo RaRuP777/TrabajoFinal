@@ -50,6 +50,7 @@ public class BuscarDiscoPrecio extends Padre {
 				else {
 					tiendaAux.setTienda(Fichero.tienda.getProductoDisco());
 					stockAux.setTienda(tiendaAux.getProductoPrecio(precio.getText()));
+					encontrado.setText(Integer.toString(stockAux.tamaño()));
 					if (stockAux.tamaño() == 0)
 						JOptionPane.showMessageDialog(jFrame,"No hay productos para esta búsqueda","Fallido", JOptionPane.ERROR_MESSAGE);
 					else {

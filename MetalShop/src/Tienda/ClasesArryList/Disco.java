@@ -197,5 +197,4 @@ public class Disco extends Producto implements Idable, Igualable, Descontable {
 	public float descuento(float precio) {
 		return (float) (precio*0.9);
 	}
-
 }

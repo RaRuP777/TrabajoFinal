@@ -1,7 +1,9 @@
 package GUI;
 
 import java.awt.Toolkit;
+
 import Tienda.ClasesArryList.Disco;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -34,6 +36,7 @@ public class MostrarDiscos extends Padre {
 			}
 		});
 		stockAux.setTienda(Fichero.tienda.getProductoDisco());
+		encontrado.setText(Integer.toString(stockAux.tamaño()));
 		mostrarDisco((Disco) stockAux.get(indice));
 		comprobarBotones();
 		vender.setEnabled(true);
