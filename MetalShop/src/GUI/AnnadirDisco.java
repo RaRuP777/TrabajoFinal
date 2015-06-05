@@ -69,6 +69,8 @@ public class AnnadirDisco extends Padre {
 				}
 }
 		});
+		lblEncontrados.setVisible(false);
+		encontrado.setVisible(false);
 		lblDuracion.setBounds(10, 123, 75, 14);
 		okButton.setText("A\u00F1adir");
 		siguiente.setVisible(false);

@@ -13,5 +13,5 @@ public interface Igualable {
 	/**
 	 * Compara el productos para ver si son del mismo tipo
 	 */
-	public boolean comparable(Producto producto);
+	public boolean igualable(Producto producto);
 }

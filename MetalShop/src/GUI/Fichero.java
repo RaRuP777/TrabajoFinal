@@ -49,8 +49,7 @@ public class Fichero {
 	/**
 	 * Nombra al nombre con el que escribimos
 	 * 
-	 * @param nombre
-	 *            Nombre del fichero
+	 * @param nombre Nombre del fichero
 	 */
 	public static void setFile(String nombre) {
 		file = new File(nombre + ".prd");

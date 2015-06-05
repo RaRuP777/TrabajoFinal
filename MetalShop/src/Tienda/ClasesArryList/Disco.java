@@ -180,7 +180,7 @@ public class Disco extends Producto implements Idable, Igualable, Descontable {
 	 * @return True/False si es o no un Accesorio
 	 */
 	@Override
-	public boolean comparable(Producto producto) {
+	public boolean igualable(Producto producto) {
 		Disco disco = (Disco) producto;
 		if (this.canciones == disco.getCanciones()
 				& this.duracion == disco.getDuracion()
