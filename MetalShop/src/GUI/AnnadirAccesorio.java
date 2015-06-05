@@ -58,6 +58,8 @@ public class AnnadirAccesorio extends Padre {
 				}
 			}
 		});
+		lblEncontrados.setVisible(false);
+		encontrado.setVisible(false);
 		okButton.setText("A\u00F1adir");
 		id.setEditable(false);
 		id.setEnabled(false);

@@ -85,7 +85,7 @@ public class Accesorio extends Producto implements Igualable, Descontable {
 	 * @return True/False si es o no un Accesorio
 	 */
 	@Override
-	public boolean comparable(Producto producto) {
+	public boolean igualable(Producto producto) {
 		Accesorio accesorio = (Accesorio) producto;
 		if (this.tipo.equals(accesorio.getTipo())&this.banda.equals(accesorio.getBanda()))
 			return true;

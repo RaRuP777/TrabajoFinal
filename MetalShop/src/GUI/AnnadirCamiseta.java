@@ -74,6 +74,8 @@ public class AnnadirCamiseta extends Padre {
 				}
 			}
 		});
+		lblEncontrados.setVisible(false);
+		encontrado.setVisible(false);
 		okButton.setText("A\u00F1adir");
 		siguiente.setVisible(false);
 		anterior.setVisible(false);

@@ -240,7 +240,7 @@ public class Producto implements Serializable, Igualable {
 	 * Comprueba si el tipo de un Producto
 	 */
 	@Override
-	public boolean comparable(Producto producto) {
+	public boolean igualable(Producto producto) {
 		return false;
 	}
 	

@@ -162,7 +162,7 @@ public class Camiseta extends Producto implements Igualable, Descontable {
 	 * @return True/False si es o no un Accesorio
 	 */
 	@Override
-	public boolean comparable(Producto producto) {
+	public boolean igualable(Producto producto) {
 		Camiseta camiseta = (Camiseta) producto;
 		if (this.sexo.equals(camiseta.getSexo())&this.talla.equals(getTalla())&this.banda.equals(camiseta.getBanda())&this.titulo.equals(camiseta.getTitulo()))
 			return true;

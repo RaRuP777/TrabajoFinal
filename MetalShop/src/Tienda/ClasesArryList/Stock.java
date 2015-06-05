@@ -74,7 +74,7 @@ public class Stock implements Serializable {
 		Producto disco = new Disco(banda, localizacion, precio, estilo, titulo,
 				duracion, canciones);
 		for (Producto producto : getProductoDisco()) {
-			if (disco.comparable(producto))
+			if (disco.igualable(producto))
 				throw new ProductoYaExisteException("El disco ya existe en la tienda");
 		}
 		setEsModificado(true);
@@ -113,7 +113,7 @@ public class Stock implements Serializable {
 		Producto camiseta = new Camiseta(banda, titulo, localizacion, precio,
 				estilo, talla, sexo);
 		for (Producto producto : getProductoCamiseta()) {
-			if (camiseta.comparable(producto))
+			if (camiseta.igualable(producto))
 				throw new ProductoYaExisteException("La camiseta ya existe en la tienda");
 		}
 		setEsModificado(true);
@@ -145,7 +145,7 @@ public class Stock implements Serializable {
 		Producto accesorio = new Accesorio(banda, localizacion, precio, estilo,
 				tipo);
 		for (Producto producto : getProductoAccesorio()) {
-			if (accesorio.comparable(producto))
+			if (accesorio.igualable(producto))
 				throw new ProductoYaExisteException("El accesorio ya existe en la tienda");
 		}
 		setEsModificado(true);
