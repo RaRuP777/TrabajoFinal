@@ -2,6 +2,7 @@ package Tienda.ClasesArryList;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+
 import Tienda.Enumeraciones.Estilo;
 import Tienda.Enumeraciones.Localizacion;
 import Tienda.Enumeraciones.Sexo;
@@ -17,6 +18,7 @@ import Tienda.Excepciones.ProductoNoExisteException;
 import Tienda.Excepciones.ProductoYaExisteException;
 import Tienda.Excepciones.SexoNoValidoException;
 import Tienda.Excepciones.TallaNoValidaException;
+import Tienda.Excepciones.TipoNoValidoException;
 import Tienda.Excepciones.TituloNoValidoException;
 
 /**
@@ -136,12 +138,13 @@ public class Stock implements Serializable {
 	 * @throws NombreBandaNoValidoException Cuando el nombre de la banda no es correcto
 	 * @throws LocalizacionNoElegidaException Cuando el lugar donde se expone no ha sido elegido
 	 * @throws ProductoYaExisteException Cuando se va a añadir un prodcuto que ya existe
+	 * @throws TipoNoValidoException Controla que el tipo ha sido elegido
 	 */
 	public boolean annadir(String banda, Localizacion localizacion,
 			float precio, Estilo estilo, Tipo tipo)
 			throws EstiloNoElegidoException, PrecioNoValidoException,
 			NombreBandaNoValidoException, LocalizacionNoElegidaException,
-			ProductoYaExisteException {
+			ProductoYaExisteException, TipoNoValidoException {
 		Producto accesorio = new Accesorio(banda, localizacion, precio, estilo,
 				tipo);
 		for (Producto producto : getProductoAccesorio()) {

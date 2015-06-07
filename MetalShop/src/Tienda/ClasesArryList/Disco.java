@@ -97,8 +97,7 @@ public class Disco extends Producto implements Idable, Igualable, Descontable {
 		if (esValido(titulo, patronNombres))
 			this.titulo = titulo;
 		else
-			throw new TituloNoValidoException(
-					"El título del disco no es correcto");
+			throw new TituloNoValidoException("Título no correcto (Debe comenzar por mayúscula y tener una longitud de entre 3 y 20 caracteres)");
 	}
 
 	/**
@@ -130,10 +129,10 @@ public class Disco extends Producto implements Idable, Igualable, Descontable {
 	 *             que 72 minutos
 	 */
 	private void setDuracion(int duracion) throws DuracionNoValidaException {
-		if (duracion > 1 && duracion < 72)
+		if (duracion > 1 && duracion < 73)
 			this.duracion = duracion;
 		else
-			throw new DuracionNoValidaException("La duracion no es válida");
+			throw new DuracionNoValidaException("Duracion no válida (Mínimo 2 máximo 72)");
 	}
 
 	/**
@@ -159,8 +158,7 @@ public class Disco extends Producto implements Idable, Igualable, Descontable {
 		if (canciones > 1 && canciones<30)
 			this.canciones = canciones;
 		else
-			throw new CantidadCancionesNoValidaException(
-					"La cantidad de cancione sno es válida");
+			throw new CantidadCancionesNoValidaException("Cantidad de cancione no válida (Mínimo 2 máximo 30)");
 		this.canciones = canciones;
 	}
 
