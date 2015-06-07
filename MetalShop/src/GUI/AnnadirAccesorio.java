@@ -3,6 +3,7 @@ package GUI;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import Tienda.Enumeraciones.Estilo;
 import Tienda.Enumeraciones.Localizacion;
 import Tienda.Enumeraciones.Tipo;
@@ -11,6 +12,7 @@ import Tienda.Excepciones.LocalizacionNoElegidaException;
 import Tienda.Excepciones.NombreBandaNoValidoException;
 import Tienda.Excepciones.PrecioNoValidoException;
 import Tienda.Excepciones.ProductoYaExisteException;
+import Tienda.Excepciones.TipoNoValidoException;
 
 /**
  * Agrega Productos del tipo Accesorios a la tienda
@@ -54,6 +56,9 @@ public class AnnadirAccesorio extends Padre {
 					mensajeError(e.getMessage());
 				} catch (LocalizacionNoElegidaException e) {
 					comboBoxLocalizacion.setForeground(java.awt.Color.RED);
+					mensajeError(e.getMessage());
+				} catch (TipoNoValidoException e) {
+					comboBoxTipo.setForeground(java.awt.Color.RED);
 					mensajeError(e.getMessage());
 				}
 			}

@@ -144,7 +144,7 @@ public class Producto implements Serializable, Igualable {
 		if (esValido(banda, patronNombres))
 			this.banda = banda;
 		else
-			throw new NombreBandaNoValidoException("El nombre de la banda no es correcto");
+			throw new NombreBandaNoValidoException("Nombre de banda no correcto (Debe comenzar por mayúscula y tener una longitud de entre 3 y 20 caracteres)");
 	}
 
 	/**
@@ -192,7 +192,7 @@ public class Producto implements Serializable, Igualable {
 		if (precio > 0)
 			this.precio = precio;
 		else
-			throw new PrecioNoValidoException("El precio no es válido");
+			throw new PrecioNoValidoException("Precio no válido (No puede ser menor que 0)");
 	}
 
 	/**

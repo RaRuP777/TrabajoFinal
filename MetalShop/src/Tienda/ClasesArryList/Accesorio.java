@@ -8,6 +8,7 @@ import Tienda.Excepciones.EstiloNoElegidoException;
 import Tienda.Excepciones.LocalizacionNoElegidaException;
 import Tienda.Excepciones.NombreBandaNoValidoException;
 import Tienda.Excepciones.PrecioNoValidoException;
+import Tienda.Excepciones.TipoNoValidoException;
 import Tienda.Interfaces.Descontable;
 import Tienda.Interfaces.Igualable;
 
@@ -43,14 +44,29 @@ public class Accesorio extends Producto implements Igualable, Descontable {
 	 * @throws PrecioNoValidoException Controla que el precio no es un valor de 0 o menor
 	 * @throws NombreBandaNoValidoException Controla que el nombre de la banda es correcto
 	 * @throws LocalizacionNoElegidaException Controla que el lugar donde se expone ha sido elegido
+	 * @throws TipoNoValidoException Controla que el tipo ha sido elegido
 	 */
 	Accesorio(String banda, Localizacion localizacion, float precio,
 			Estilo estilo, Tipo tipo)
 			throws EstiloNoElegidoException, PrecioNoValidoException,
-			NombreBandaNoValidoException, LocalizacionNoElegidaException {
+			NombreBandaNoValidoException, LocalizacionNoElegidaException, TipoNoValidoException {
 		super(banda, localizacion, precio, estilo);
 		setId();
-		this.tipo=tipo;
+		setTipo(tipo);
+	}
+
+	/**
+	 * Modifica el tipo de accesorio
+	 * 
+	 * @param tipo Tipo de accesorio
+	 * 
+	 * @throws TipoNoValidoException Controla que el tipo ha sido seleccionado 
+	 */
+	private void setTipo(Tipo tipo) throws TipoNoValidoException {
+		if (tipo != Tipo.ELIGE)
+			this.tipo = tipo;
+		else
+			throw new TipoNoValidoException("Elige un tipo, por favor");
 	}
 
 	/**
