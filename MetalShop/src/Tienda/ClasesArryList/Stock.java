@@ -267,10 +267,9 @@ public class Stock implements Serializable {
 	 * @return Tienda con todos los productos encontrados
 	 */
 	public ArrayList<Producto> getProductoDisco() {
-		Disco disco = new Disco();
 		ArrayList<Producto> mostrar = new ArrayList<Producto>();
 		for (Producto producto : tienda) {
-			if ((producto.getClass() == disco.getClass()))
+			if (producto.getClass() == Disco.class)
 				mostrar.add((Disco) producto);
 		}
 		return mostrar;
@@ -282,10 +281,9 @@ public class Stock implements Serializable {
 	 * @return Tienda con todos los productos encontrados
 	 */
 	public ArrayList<Producto> getProductoCamiseta() {
-		Camiseta camiseta = new Camiseta();
 		ArrayList<Producto> mostrar = new ArrayList<Producto>();
 		for (Producto producto : tienda) {
-			if ((producto.getClass() == camiseta.getClass()))
+			if (producto.getClass() == Camiseta.class)
 				mostrar.add((Camiseta) producto);
 		}
 		return mostrar;
@@ -297,10 +295,9 @@ public class Stock implements Serializable {
 	 * @return Tienda con todos los productos encontrados
 	 */
 	public ArrayList<Producto> getProductoAccesorio() {
-		Accesorio accesorio = new Accesorio();
 		ArrayList<Producto> mostrar = new ArrayList<Producto>();
 		for (Producto producto : tienda) {
-			if ((producto.getClass() == accesorio.getClass()))
+			if (producto.getClass() == Accesorio.class)
 				mostrar.add((Accesorio) producto);
 		}
 		return mostrar;
