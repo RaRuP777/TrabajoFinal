@@ -1,12 +1,8 @@
 package GUI;
 
 import java.awt.Toolkit;
-
-import javax.swing.JOptionPane;
-
 import Tienda.ClasesArryList.Disco;
 import Tienda.Enumeraciones.Localizacion;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -42,13 +38,13 @@ public class BuscarDiscoLocalizacion extends Padre {
 		okButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"No hay productos en la tienda", "Fallido",JOptionPane.ERROR_MESSAGE);
+					mensajeError("No hay productos en la tienda");
 				else {
 					tiendaAux.setTienda(Fichero.tienda.getProductoDisco());
 					stockAux.setTienda(tiendaAux.getProductoLocalizacion((Localizacion) comboBoxLocalizacion.getSelectedItem()));
 					encontrado.setText(Integer.toString(stockAux.tamaño()));
 					if (stockAux.tamaño() == 0)
-						JOptionPane.showMessageDialog(jFrame,"No hay productos para esta búsqueda", "Fallido",JOptionPane.ERROR_MESSAGE);
+						mensajeError("No hay productos para esta búsqueda");
 					else {	
 						mostrarDisco((Disco) stockAux.get(indice));
 						comprobarBotones();

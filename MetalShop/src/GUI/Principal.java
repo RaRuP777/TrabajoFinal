@@ -84,7 +84,7 @@ public class Principal {
 
 			@Override
 			public void windowClosing(WindowEvent e) {
-				if (modificado())
+				if (cambiosSinGuardar())
 					return;
 				else
 					System.exit(0);
@@ -116,7 +116,7 @@ public class Principal {
 		mntmNuevo.setForeground(Color.RED);
 		mntmNuevo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (modificado())
+				if (cambiosSinGuardar())
 					return;
 				else
 					Fichero.nuevo();
@@ -134,7 +134,7 @@ public class Principal {
 		mntmAbrir.setForeground(Color.RED);
 		mntmAbrir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (modificado())
+				if (cambiosSinGuardar())
 					return;
 				else
 					Fichero.abrir();
@@ -178,7 +178,7 @@ public class Principal {
 		mntmSalir.setForeground(Color.RED);
 		mntmSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (modificado())
+				if (cambiosSinGuardar())
 					return;
 				else
 					System.exit(0);
@@ -625,7 +625,7 @@ public class Principal {
 	 * 
 	 * @return True/False para interrumpir lo que se estaba haciendo o continuar
 	 */
-	private boolean modificado() {
+	private boolean cambiosSinGuardar() {
 		if (Fichero.tienda.getEsModificado()) {
 			int confirmacionSalida = JOptionPane.showOptionDialog(null,
 					"¿Desea Guardar el trabajo actual?", "Cambios detectados",

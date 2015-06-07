@@ -1,12 +1,8 @@
 package GUI;
 
 import java.awt.Toolkit;
-
-import javax.swing.JOptionPane;
-
 import Tienda.ClasesArryList.Camiseta;
 import Tienda.Enumeraciones.Localizacion;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -43,13 +39,13 @@ public class BuscarCamisetaLocalizacion extends Padre {
 		okButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (Fichero.tienda.tamaño() == 0)
-					JOptionPane.showMessageDialog(jFrame,"No hay productos en la tienda", "Fallido",JOptionPane.ERROR_MESSAGE);
+					mensajeError("No hay productos en la tienda");
 				else {
 					tiendaAux.setTienda(Fichero.tienda.getProductoCamiseta());
 					stockAux.setTienda(tiendaAux.getProductoLocalizacion((Localizacion) comboBoxLocalizacion.getSelectedItem()));
 					encontrado.setText(Integer.toString(stockAux.tamaño()));
 					if (stockAux.tamaño() == 0)
-						JOptionPane.showMessageDialog(jFrame,"No hay productos para esta búsqueda", "Fallido",JOptionPane.ERROR_MESSAGE);
+						mensajeError("No hay productos para esta búsqueda");
 					else {	
 						mostrarCamiseta((Camiseta) stockAux.get(indice));
 						comprobarBotones();
