@@ -69,7 +69,7 @@ public class BuscarDiscoLocalizacion extends Padre {
 		radiobuttonHombre.setVisible(false);
 		radiobuttonMujer.setVisible(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(BuscarDiscoLocalizacion.class.getResource("/GUI/iconos/buscar2.png")));
-		setTitle("Buscar Disco por Banda");
+		setTitle("Buscar Disco por Locacalizaci\u00F3n");
 		setModal(true);
 		setResizable(false);
 		setBounds(100, 100, 450, 300);

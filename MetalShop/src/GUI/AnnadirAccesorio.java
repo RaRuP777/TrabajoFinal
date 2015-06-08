@@ -42,7 +42,7 @@ public class AnnadirAccesorio extends Padre {
 								(Estilo) comboBoxEstilo.getSelectedItem(), (Tipo) comboBoxTipo.getSelectedItem());
 					mensajeInfo("Un accesorio ha sido añadido");
 				} catch (NumberFormatException e) {
-					mensajeError(e.getMessage());
+					mensajeError("No puedes dejar campos en blanco");
 				} catch (ProductoYaExisteException e) {
 					mensajeError(e.getMessage());
 				} catch (EstiloNoElegidoException e) {

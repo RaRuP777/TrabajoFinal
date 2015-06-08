@@ -158,7 +158,7 @@ public class Disco extends Producto implements Idable, Igualable, Descontable {
 		if (canciones > 1 && canciones<30)
 			this.canciones = canciones;
 		else
-			throw new CantidadCancionesNoValidaException("Cantidad de cancione no válida (Mínimo 2 máximo 30)");
+			throw new CantidadCancionesNoValidaException("Cantidad de canciones no válida (Mínimo 2 máximo 30)");
 		this.canciones = canciones;
 	}
 
