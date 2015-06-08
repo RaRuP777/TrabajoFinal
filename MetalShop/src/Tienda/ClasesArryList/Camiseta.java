@@ -152,7 +152,7 @@ public class Camiseta extends Producto implements Igualable, Descontable {
 		if (sexo != null)
 			this.sexo = sexo;
 		else
-			throw new SexoNoValidoException("El sexo no es válido");
+			throw new SexoNoValidoException("Sexo no seleccionado");
 	}
 
 	/**

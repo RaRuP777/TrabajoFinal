@@ -59,7 +59,7 @@ public class BuscarAccesorioLocalizacion extends Padre {
 			}
 		});
 		setIconImage(Toolkit.getDefaultToolkit().getImage(BuscarAccesorioLocalizacion.class.getResource("/GUI/iconos/buscar2.png")));
-		setTitle("Buscar Accesorio Localizaci\u00F3n");
+		setTitle("Buscar Accesorio por Localizaci\u00F3n");
 		banda.setEditable(false);
 		okButton.setText("Buscar");
 		fecha.setEnabled(false);
